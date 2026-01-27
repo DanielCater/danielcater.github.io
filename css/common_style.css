@@ -180,6 +180,22 @@ h3 {
   }
 }
 
+/* Animated box in bottom-right corner of Homepage*/
+.box {
+  width: 80px;
+  height: 30px;
+  background: #ffb300;
+  position: fixed;     
+  bottom: 20px;         
+  right: 20px;
+  animation: bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
 /* Format links & buttons */
 a,
 a:visited {
@@ -293,6 +309,7 @@ header nav a[aria-current="true"] {
   border-color: var(--accent);
   color: var(--accent);
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 /* Reduce nav side on mobile */
