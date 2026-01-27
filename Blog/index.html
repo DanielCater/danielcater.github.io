@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-      * {
-      opacity: 0;
-      animation: fadeIn 0.5s ease forwards;
-      }
-
-      @keyframes fadeIn {
-      to {
-          opacity: 1;
-      }
-      }
-      body.blog-layout {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-columns: 500px 1fr 500px;
-        grid-template-areas:
-          "header header header"
-          "left   main   right"
-          "footer footer footer";
-        min-height: 100vh;
-      }
-      header.blog-layout { grid-area: header; }
-      aside.left { grid-area: left; }
-      main.blog-layout { grid-area: main; }
-      aside.right { grid-area: right; }
-      footer.blog-layout { grid-area: footer; }
-      aside.right, aside.left {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-  </style>
   <head>
+    <style>
+        * {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+        }
+        body.blog-layout {
+          display: grid;
+          grid-template-rows: auto 1fr auto;
+          grid-template-columns: 500px 1fr 500px;
+          grid-template-areas:
+            "header header header"
+            "left   main   right"
+            "footer footer footer";
+          min-height: 100vh;
+        }
+        header.blog-layout { grid-area: header; }
+        aside.left { grid-area: left; }
+        main.blog-layout { grid-area: main; }
+        aside.right { grid-area: right; }
+        footer.blog-layout { grid-area: footer; }
+        aside.right, aside.left {
+          margin-left: auto;
+          margin-right: auto;
+        }
+    </style>
+
     <meta charset="UTF-8">
     <title>Blog</title>
 
     <link rel="stylesheet" href="../css/common_style.css">
   </head>
+  
 <body class="blog-layout">
 <header class="blog-layout">
     <nav>
