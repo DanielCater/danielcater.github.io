@@ -11,8 +11,29 @@
           opacity: 1;
       }
       }
+      body.blog-layout {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 500px 1fr 500px;
+        grid-template-areas:
+          "header header header"
+          "left   main   right"
+          "footer footer footer";
+        min-height: 100vh;
+      }
+      header.blog-layout { grid-area: header; }
+      aside.left { grid-area: left; }
+      main.blog-layout { grid-area: main; }
+      aside.right { grid-area: right; }
+      footer.blog-layout { grid-area: footer; }
+      aside.right, aside.left {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
   </style>
-<header>
+<body class="blog-layout">
+<header class="blog-layout">
     <nav>
         <a href="../index.html">Home</a>
         <a href="index.html" aria-current="page">Blog</a>
@@ -25,8 +46,27 @@
 
     <link rel="stylesheet" href="../css/common_style.css">
 </header>
-<main>
+
+    <aside class="left">
+      <h3>Contents</h3>
+      <ul><li><a href="2026-01-27-weather.html">Snowday!</a><ul><li>1/27/2026</li></ul></li></ul>
+      <ul><li><a href="2026-01-22-sleepy.html">I am very tired after the first week of classes</a><ul><li>1/22/2026</li></ul></li></ul>
+    </aside>
+
+<main class="blog-layout">
     <h1>Blog</h1>
+
+    <article>
+      <h2>
+        <a href="2026-01-27-weather.html">
+          Snowday!
+        </a>
+      </h2>
+      <p><time datetime="2026-01-27">January 27, 2026</time></p>
+      <p>
+          I finally managed to get a snowday on Monday! It was great to have a break from classes and just relax at home.
+      </p>
+    </article>
 
     <article>
       <h2>
@@ -41,7 +81,15 @@
     </article>
 </main>
 
-<footer>
+<aside class="right">
+      <h3>Profile</h3>
+      <p>I'm Daniel, an undergraduate at Siena University. This is what happens in my daily life!</p>
+
+      <h3>Tags</h3>
+      <p>#coding #life #university</p>
+</aside>
+<footer class="blog-layout">
   <p>Made by Daniel Cater</p>
 </footer>
+</body>
 </html>
