@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+    /* Fade-in animation for page load */
+    <style>
+        * {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+        }
+
+        .color-shift {
+            display: inline-block;
+            padding: 7px 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffb300);
+            color: white;
+            border-radius: 6px;
+            transition: background 0.6s ease;
+            }
+
+            .color-shift:hover {
+            background: linear-gradient(45deg, #48dbfb, #1dd1a1);
+            }
+    </style>
+
 <header>
     <nav>
         <a href="index.html" aria-current="page">Home</a>
@@ -11,22 +38,25 @@
     <meta charset="UTF-8">
     <title>Daniel's Homepage</title>
 
-    <link rel="stylesheet" href="css/simple.css">
+    <link rel="stylesheet" href="css/common_style.css">
 </header>
 <main>
     <h1>Daniel's Homepage</h1>
 
     <img src="images/raptor.jpg" alt="Yamaha Raptor" width="300">
 
-    <p>Welcome to my website! Here you can find out more about me and my hobbies</p>
+    <p>Welcome to my website! My name is Daniel. I am a Siena University Computer Science student learning software development. 
+       Here you can find out more about me and my hobbies</p>
 
-    <p>Check out my Github <a href="https://github.com/DanielCater">here</a>.</p>
+    <p>Check out my Github <a class="color-shift" href="https://github.com/DanielCater">here</a>.</p>
 
     <h2>Contact Me</h2>
     <ul>
         <li>Email: d29cate@siena.edu</li>
         <li>Discord: dan.2121</li>
     </ul>
+
+        <div class="box">Welcome!</div>
 
     <p class="notice">
         <strong>Want to learn how to make a website like this?</strong><br> Check out the free web book 
