@@ -336,7 +336,7 @@ aside, details, pre, progress {
 
 aside {
   font-size: 1rem;
-  width: 30%;
+  width: 40%;
   padding: 0 15px;
   margin-inline-start: 15px;
   float: right;
@@ -747,7 +747,7 @@ div.notice p:last-of-type {
     margin: 1cm;
   }
   body {
-    display: block;
+    display: grid;
   }
   body > header {
     background-color: unset;
