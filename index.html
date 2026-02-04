@@ -49,6 +49,27 @@
                 opacity: 1;
             }
             }
+
+        /* Text animation */
+        .tracking-in-contract-bck-bottom {
+            animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        @keyframes tracking-in-contract-bck-bottom {
+        0% {
+            letter-spacing: 1em;
+            transform: translateZ(400px) translateY(300px);
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            transform: translateZ(0) translateY(0);
+            opacity: 1;
+        }
+        }
+
         </style>
     </head>
 
@@ -62,7 +83,7 @@
     </nav>
 </header>
 <main>
-    <h1>Daniel's Homepage</h1>
+    <h1 class="tracking-in-contract-bck-bottom">Daniel's Homepage</h1>
 
     <img src="images/raptor.jpg" alt="Yamaha Raptor" width="300" class="fade-in-bottom">
 
