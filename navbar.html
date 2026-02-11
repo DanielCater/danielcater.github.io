@@ -1,0 +1,55 @@
+<header>
+    <nav class="site-nav flex-container">
+        <div class="logo">MySite</div>
+        <ul class="nav-links">
+            <li class="flex-item"><a href="myflex.html">Flex</a></li>
+            <li class="flex-item"><a href="layout.html">Layout</a></li>
+            <li class="flex-item"><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <style>
+        .flex-container{
+            display: flex;
+            background: #333;
+        }
+        .flex-item{
+            display: flex;
+            flex-direction: row;
+
+        }
+        .logo{
+            font-size: 24px;
+            color: white;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links{
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        a:hover{
+            background-color: red;
+        }
+        @media (max-width: 600px){
+            nav li{
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            nav .logo{
+                padding: 20px;
+            }
+            nav ul{
+                width: max-content;
+            }
+            nav{
+                width: max-content;
+                
+            }
+        }
+
+    </style>
+</header>
