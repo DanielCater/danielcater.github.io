@@ -11,3 +11,9 @@ buttonA.addEventListener("click", () => {
 });
 
 
+const textbox = document.getElementById("textBox");
+const div = document.getElementById("output");
+
+textbox.addEventListener("keypress", (event) => {
+    div.textContent = `You pressed "${event.key}".`;
+});
