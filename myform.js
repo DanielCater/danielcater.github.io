@@ -17,3 +17,11 @@ const div = document.getElementById("output");
 textbox.addEventListener("keypress", (event) => {
     div.textContent = `You pressed "${event.key}".`;
 });
+
+const buttonB = document.getElementById("greetingBtn");
+const greetingDiv = document.getElementById("greeting");
+
+buttonB.addEventListener("click", () => {
+    const name = prompt("What is your name?");
+    greetingDiv.textContent = `Hello! ${name}, nice to see you!`;
+});
