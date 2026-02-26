@@ -8,56 +8,57 @@ const lowOrHi = document.querySelector(".lowOrHi");
 
 let guessCount = 1;
 
-function evaluate(){
+function evaluate() {
     let num = Number(input.value);
     input.value = "";
 
-    if(guessCount === 1){
-            guesses.textContent = "Previous guesses:";
+    if (guessCount === 1) {
+        guesses.textContent = "Previous guesses:";
     }
 
     guesses.textContent = `${guesses.textContent} ${num}`;
 
-    if(num === randomNum){
+    if (num === randomNum) {
         lastResult.textContent = "Congradulations, you guessed correct";
-        lastResult.style.backgroundColor = "green";
+        lastResult.className = 'lastResult alert alert-success';
         lowOrHi.textContent = "";
         gameOver();
     }
-    else if(guessCount === 10){
+    else if (guessCount === 10) {
         lastResult.textContent = "GAME OVER";
+        lastResult.className = 'lastResult alert alert-danger';
         lowOrHi.textContent = "";
         gameOver();
     }
-    else{
+    else {
         lastResult.textContent = "Wrong!";
-        lastResult.style.backgroundColor = "red";
-
-        if(num < randomNum){
+        lastResult.className = 'lastResult alert alert-danger';
+        if (num < randomNum) {
             lowOrHi.textContent = "Last guess was too low";
         }
-        else{
+        else {
             lowOrHi.textContent = "Last guess was too high";
         }
     }
     guessCount++;
 }
 
-function gameOver(){
+function gameOver() {
     input.disabled = true;
     button.disabled = true;
     resetButton = document.createElement("button");
     resetButton.textContent = "Start new game";
-    document.body.append(resetButton);
+    resetButton.className = 'btn btn-success mt-3';
+    document.querySelector('.container').appendChild(resetButton)
     resetButton.addEventListener("click", reset);
 }
 
-function reset(){
+function reset() {
     guessCount = 1;
     guesses.textContent = "";
     lastResult.textContent = "";
     lowOrHi.textContent = "";
-    lastResult.style.backgroundColor = "white";
+    lastResult.className = 'lastResult';
     input.disabled = false;
     button.disabled = false;
     input.value = "";
