@@ -1,60 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style>
-            * {
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Daniel</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        * {
             opacity: 0;
             animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
             }
+        }
 
-            @keyframes fadeIn {
-                to {
-                    opacity: 1;
-                }
-            }
-        </style>
+        body {
+            background-color: #f8f9fa;
+        }
 
-        <meta charset="UTF-8">
-        <title>About Daniel</title>
+        .navbar-brand {
+            font-weight: 700;
+        }
 
-        <link rel="stylesheet" href="css/common_style.css">
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
 
-    </head>
+        .about-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        }
 
-<header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Blog/index.html">Blog</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="fun.html">Fun</a>
+        .interest-badge {
+            background-color: #e9ecef;
+            color: #495057;
+            border-radius: 2rem;
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 4px 3px;
+            transition: background-color 0.2s ease;
+        }
+
+        .interest-badge:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Daniel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Blog/index.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fun.html">Fun</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-</header>
 
-<main>
-    <h1>About Daniel</h1>
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
 
-    <img src="images/me.jpg" alt="A picture of me" width="300">
+                <!-- Profile header -->
+                <div class="card about-card p-4 p-md-5 mb-4">
+                    <div class="row align-items-center g-4">
 
-    <p>
-        My name is Daniel. I enjoy coding, technology, and anything outdoors. I started this page to get started in my web app development course at Siena.
-    </p>
+                        <!-- Photo -->
+                        <div class="col-md-4 text-center">
+                            <img src="images/me.jpg" alt="A picture of me" class="profile-img">
+                        </div>
 
-    <p>
-        I enjoy programming, and have mainly done so in Python and Java. I also enjoy riding ATVs with my dad and friends, and would like to go to the sand
-        dunes sometime in the future. 
-    </p>
+                        <!-- Intro text -->
+                        <div class="col-md-8">
+                            <h1 class="fw-bold mb-3">About Daniel</h1>
+                            <p class="text-muted mb-2">
+                                My name is Daniel. I enjoy coding, technology, and anything outdoors. I started
+                                this page to get started in my web app development course at Siena.
+                            </p>
+                            <p class="text-muted mb-0">
+                                I enjoy programming, and have mainly done so in Python and Java. I also enjoy
+                                riding ATVs with my dad and friends, and would like to go to the sand dunes
+                                sometime in the future.
+                            </p>
+                        </div>
 
-    <h2>My Interests</h2>
-    <ul>
-        <li>ATV Riding</li>
-        <li>Hiking</li>
-        <li>Programming</li>
-        <li>Traveling</li>
-    </ul>
-</main>
+                    </div>
+                </div>
 
-<footer>
-  <p>Made by Daniel Cater</p>
-</footer>
+                <!-- Interests card -->
+                <div class="card about-card p-4 p-md-5">
+                    <h2 class="h4 fw-semibold mb-4">My Interests</h2>
+                    <div>
+                        <span class="interest-badge">🏍 ATV Riding</span>
+                        <span class="interest-badge">🥾 Hiking</span>
+                        <span class="interest-badge">💻 Programming</span>
+                        <span class="interest-badge">✈️ Traveling</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
 </html>

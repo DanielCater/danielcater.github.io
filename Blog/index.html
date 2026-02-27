@@ -1,98 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-        * {
-        opacity: 0;
-        animation: fadeIn 0.5s ease forwards;
-        }
 
-        @keyframes fadeIn {
-        to {
-            opacity: 1;
-        }
-        }
-        body.blog-layout {
-          display: grid;
-          grid-template-rows: auto 1fr auto;
-          grid-template-columns: 500px 1fr 500px;
-          grid-template-areas:
-            "header header header"
-            "left   main   right"
-            "footer footer footer";
-          min-height: 100vh;
-        }
-        header.blog-layout { grid-area: header; }
-        aside.left { grid-area: left; }
-        main.blog-layout { grid-area: main; }
-        aside.right { grid-area: right; }
-        footer.blog-layout { grid-area: footer; }
-        aside.right, aside.left {
-          margin-left: auto;
-          margin-right: auto;
-        }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
 
-    <meta charset="UTF-8">
-    <title>Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/common_style.css">
-  </head>
-  
-<body class="blog-layout">
-<header class="blog-layout">
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">Blog</a>
-        <a href="../about.html">About</a>
-        <a href="../resume.html">Resume</a>
-        <a href="../fun.html">Fun</a>
-    </nav>
-</header>
+  <style>
+    * {
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
 
-    <aside class="left">
-      <h3>Contents</h3>
-      <ul><li><a href="2026-01-27-weather.html">Snowday!</a><ul><li>1/27/2026</li></ul></li></ul>
-      <ul><li><a href="2026-01-22-sleepy.html">I am very tired after the first week of classes</a><ul><li>1/22/2026</li></ul></li></ul>
-    </aside>
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
 
-<main class="blog-layout">
-    <h1>Blog</h1>
+    body {
+      background-color: #f8f9fa;
+    }
 
-    <article>
-      <h2>
-        <a href="2026-01-27-weather.html">
-          Snowday!
-        </a>
-      </h2>
-      <p><time datetime="2026-01-27">January 27, 2026</time></p>
-      <p>
-          I finally managed to get a snowday on Monday! It was great to have a break from classes and just relax at home.
-      </p>
-    </article>
+    .navbar-brand {
+      font-weight: 700;
+    }
 
-    <article>
-      <h2>
-        <a href="2026-01-22-sleepy.html">
-          I am very tired after the first week of classes
-        </a>
-      </h2>
-      <p><time datetime="2026-01-22">January 22, 2026</time></p>
-      <p>
-          This week has been exhausting! I have so many new classes and homework assignments to keep track of.
-      </p>
-    </article>
-</main>
+    .article-card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-<aside class="right">
-      <h3>Profile</h3>
-      <p>I'm Daniel, an undergraduate at Siena University. This is what happens in my daily life!</p>
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
 
-      <h3>Tags</h3>
-      <p>#coding #life #university</p>
-</aside>
-<footer class="blog-layout">
-  <p>Made by Daniel Cater</p>
-</footer>
+    .article-card h2 a {
+      text-decoration: none;
+      color: #212529;
+    }
+
+    .article-card h2 a:hover {
+      color: #667eea;
+    }
+
+    .sidebar-card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .tag-badge {
+      background-color: #e9ecef;
+      color: #495057;
+      border-radius: 2rem;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 3px 2px;
+    }
+
+    .post-date {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .contents-link {
+      text-decoration: none;
+      color: #495057;
+      display: block;
+      padding: 6px 0;
+      border-bottom: 1px solid #e9ecef;
+      transition: color 0.2s;
+    }
+
+    .contents-link:hover {
+      color: #667eea;
+    }
+
+    .contents-date {
+      font-size: 0.75rem;
+      color: #adb5bd;
+    }
+
+    footer {
+      background-color: #212529;
+      color: #adb5bd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Daniel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../fun.html">Fun</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="container my-5">
+    <div class="row g-4">
+
+      <!-- Left sidebar: Table of Contents -->
+      <div class="col-lg-3 order-lg-1 order-2">
+        <div class="card sidebar-card p-4 sticky-top" style="top: 80px;">
+          <h5 class="fw-semibold mb-3">📋 Contents</h5>
+          <div>
+            <a href="2026-01-27-weather.html" class="contents-link">
+              Snowday!
+              <span class="contents-date d-block">Jan 27, 2026</span>
+            </a>
+            <a href="2026-01-22-sleepy.html" class="contents-link">
+              I am very tired after the first week of classes
+              <span class="contents-date d-block">Jan 22, 2026</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main blog posts -->
+      <div class="col-lg-6 order-lg-2 order-1">
+        <h1 class="fw-bold mb-4">Blog</h1>
+
+        <!-- Post 1 -->
+        <div class="card article-card p-4 mb-4">
+          <article>
+            <h2 class="h4 fw-semibold">
+              <a href="2026-01-27-weather.html">Snowday!</a>
+            </h2>
+            <p class="post-date mb-2">
+              🗓 <time datetime="2026-01-27">January 27, 2026</time>
+            </p>
+            <p class="text-muted mb-0">
+              I finally managed to get a snowday on Monday! It was great to have a break from classes and just relax at
+              home.
+            </p>
+          </article>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="card article-card p-4 mb-4">
+          <article>
+            <h2 class="h4 fw-semibold">
+              <a href="2026-01-22-sleepy.html">I am very tired after the first week of classes</a>
+            </h2>
+            <p class="post-date mb-2">
+              🗓 <time datetime="2026-01-22">January 22, 2026</time>
+            </p>
+            <p class="text-muted mb-0">
+              This week has been exhausting! I have so many new classes and homework assignments to keep track of.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Right sidebar: Profile & Tags -->
+      <div class="col-lg-3 order-lg-3 order-3">
+        <div class="card sidebar-card p-4 mb-4 sticky-top" style="top: 80px;">
+          <h5 class="fw-semibold mb-2">👤 Profile</h5>
+          <p class="text-muted small mb-4">I'm Daniel, an undergraduate at Siena University. This is what happens in my
+            daily life!</p>
+
+          <h5 class="fw-semibold mb-2">🏷 Tags</h5>
+          <div>
+            <span class="tag-badge">#coding</span>
+            <span class="tag-badge">#life</span>
+            <span class="tag-badge">#university</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+
 </body>
+
 </html>

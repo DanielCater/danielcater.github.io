@@ -1,36 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Snowday!</title>
 
-        <link rel="stylesheet" href="../css/common_style.css">
-    </head>
-<header>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">Blog</a>
-        <a href="../about.html">About</a>
-        <a href="../resume.html">Resume</a>
-        <a href="../fun.html">Fun</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowday!</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .post-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .post-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .post-date {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .post-body {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #343a40;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #495057;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+        }
+
+        .divider {
+            border-color: #dee2e6;
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Daniel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../fun.html">Fun</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-</header>
-<main>
-    <h1>Snowday!</h1>
 
-    <p><time datetime="2026-01-27">January 27, 2026</time></p>
-    
-    <p>
-        I finally managed to get a snowday on Monday! It was great to have a break from classes and just relax at home. 
-        However, I don't care for the mess the storm left and how Siena isn't quick to clean up. I nearly slipped multiple
-        times today walking to class. I also had to do a lot of shoveling and snowblowing since there was over a foot of snow
-        at my home.
-    </p>
+    <!-- Post content -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
 
-    <a href="index.html" class="button">&larr; Back to the blog</a>
-</main>
+                <!-- Back link -->
+                <a href="index.html" class="back-link d-inline-flex align-items-center gap-1 mb-4">
+                    ← Back to the blog
+                </a>
 
-<footer>
-  <p>Made by Daniel Cater</p>
-</footer>
+                <!-- Post card -->
+                <div class="card post-card p-4 p-md-5">
+
+                    <!-- Header -->
+                    <header class="mb-4">
+                        <h1 class="post-title mb-2">Snowday!</h1>
+                        <p class="post-date mb-0">
+                            🗓 <time datetime="2026-01-27">January 27, 2026</time>
+                        </p>
+                    </header>
+
+                    <hr class="divider">
+
+                    <!-- Body -->
+                    <section class="post-body mt-4">
+                        <p>
+                            I finally managed to get a snowday on Monday! It was great to have a break from
+                            classes and just relax at home. However, I don't care for the mess the storm left
+                            and how Siena isn't quick to clean up. I nearly slipped multiple times today walking
+                            to class. I also had to do a lot of shoveling and snowblowing since there was over a
+                            foot of snow at my home.
+                        </p>
+                    </section>
+
+                    <hr class="divider mt-4">
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
 </html>

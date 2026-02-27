@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Daniel's Homepage</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel's Homepage</title>
 
-        <link rel="stylesheet" href="css/common_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-        <style>
-        /* Fade-in animation for all elements */
+    <style>
         * {
-        opacity: 0;
-        animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
         }
 
         @keyframes fadeIn {
-        to {
-            opacity: 1;
-        }
+            to {
+                opacity: 1;
+            }
         }
 
-        /* Color shifting link style */
         .color-shift {
             display: inline-block;
             padding: 7px 20px;
@@ -28,86 +31,159 @@
             color: white;
             border-radius: 6px;
             transition: background 0.6s ease;
-            }
+            text-decoration: none;
+        }
 
-            .color-shift:hover {
+        .color-shift:hover {
             background: linear-gradient(45deg, #48dbfb, #1dd1a1);
-            }
+            color: white;
+        }
 
-            /* Fade in animation*/
         .fade-in-bottom {
-                animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            }
+            animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
 
         @keyframes fade-in-bottom {
             0% {
                 transform: translateY(50px);
                 opacity: 0;
             }
+
             100% {
                 transform: translateY(0);
                 opacity: 1;
             }
-            }
+        }
 
-        /* Text animation */
         .tracking-in-contract-bck-bottom {
             animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         }
 
         @keyframes tracking-in-contract-bck-bottom {
-        0% {
-            letter-spacing: 1em;
-            transform: translateZ(400px) translateY(300px);
-            opacity: 0;
-        }
-        40% {
-            opacity: 0.6;
-        }
-        100% {
-            transform: translateZ(0) translateY(0);
-            opacity: 1;
-        }
+            0% {
+                letter-spacing: 1em;
+                transform: translateZ(400px) translateY(300px);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateZ(0) translateY(0);
+                opacity: 1;
+            }
         }
 
-        </style>
-    </head>
+        body {
+            background-color: #f8f9fa;
+        }
 
-<header>
-    <nav>
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="Blog/index.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="fun.html">Fun</a>
+        .profile-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Daniel</a>
+
+            <!-- Hamburger toggle for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Blog/index.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fun.html">Fun</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-</header>
-<main>
-    <h1 class="tracking-in-contract-bck-bottom">Daniel's Homepage</h1>
 
-    <img src="images/raptor.jpg" alt="Yamaha Raptor" width="300" class="fade-in-bottom">
+    <!-- Main content -->
+    <main>
+        <div class="container my-5">
 
-    <p>Welcome to my website! My name is Daniel. I am a Siena University Computer Science student learning software development. 
-       Here you can find out more about me and my hobbies</p>
+            <!-- Hero row -->
+            <div class="row align-items-center g-4 mb-5">
+                <!-- Text column -->
+                <div class="col-md-7">
+                    <h1 class="tracking-in-contract-bck-bottom display-5 fw-bold mb-3">Daniel's Homepage</h1>
+                    <p class="lead text-muted">
+                        Welcome to my website! My name is Daniel. I am a Siena University Computer Science student
+                        learning software development. Here you can find out more about me and my hobbies.
+                    </p>
+                    <a class="color-shift mt-2" href="https://github.com/DanielCater">View my GitHub</a>
+                </div>
 
-    <p>Check out my Github <a class="color-shift" href="https://github.com/DanielCater">here</a>.</p>
+                <!-- Image column -->
+                <div class="col-md-5 text-center">
+                    <img src="images/LinkedInPic.jpg" alt="Yamaha Raptor"
+                        class="fade-in-bottom img-fluid rounded-3 shadow" style="max-width: 300px;">
+                </div>
+            </div>
 
-    <h2>Contact Me</h2>
-    <ul>
-        <li>Email: d29cate@siena.edu</li>
-        <li>Discord: dan.2121</li>
-    </ul>
+            <!-- Contact + Welcome row -->
+            <div class="row g-4">
+                <!-- Contact card -->
+                <div class="col-md-6">
+                    <div class="card profile-card h-100 p-4">
+                        <h2 class="h4 fw-semibold mb-3">📬 Contact Me</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0">
+                                <span class="fw-medium">Email:</span>
+                                <a href="mailto:d29cate@siena.edu"
+                                    class="ms-1 text-decoration-none">d29cate@siena.edu</a>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <span class="fw-medium">Discord:</span>
+                                <span class="ms-1 text-muted">dan.2121</span>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <span class="fw-medium">LinkedIn:</span>
+                                <a href="https://www.linkedin.com/in/daniel-cater-5804893aa/"
+                                    class="ms-1 text-decoration-none" target="_blank">Daniel Cater</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="box">Welcome!</div>
+                <!-- Welcome banner -->
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="w-100 d-flex align-items-center justify-content-center">
+                        <img src="images/icegif.gif" alt="Welcome gif">
+                    </div>
+                </div>
+            </div>
 
-    <p class="notice">
-        <strong>Want to learn how to make a website like this?</strong><br> Check out the free web book 
-        <a href="https://htmlforpeople.com/">HTML for People</a>. It's made for everyone and teaches you 
-        how to make a webpage in a friendly, approachable way.
-    </p>
-</main>
+        </div>
+    </main>
 
-<footer>
-  <p>Made by Daniel Cater</p>
-</footer>
+</body>
+
 </html>

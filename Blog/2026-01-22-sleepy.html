@@ -1,44 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Sleepy</title>
 
-        <link rel="stylesheet" href="../css/common_style.css">
-    </head>
-<header>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">Blog</a>
-        <a href="../about.html">About</a>
-        <a href="../resume.html">Resume</a>
-        <a href="../fun.html">Fun</a>
-    </nav>
-</header>
-<main>
-    <h1>I am very tired after the first week of classes</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepy!</title>
 
-    <p><time datetime="2026-01-22">January 22, 2026</time></p>
-    <aside>
-        <h4>To Do for the Weekend</h4>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-        <ul>
-            <li>Sleep</li>
-            <li>Sleep</li>
-            <li>More Sleep</li>
-        </ul>
-    </aside>
-    <p>
-        This week has been exhausting! I have so many new classes and homework assignments to keep track of. 
-        I'm looking forward to the weekend so I can get some rest and recharge for next week. Hopefully, I 
-        can find a good balance between my studies and relaxation. It's also very unfortunate that I have all
-        early classes this semester, but at least I get done earlier. 
-    </p>
+    <style>
+        * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
 
-    <a href="index.html" class="button">&larr; Back to the blog</a>
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .post-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .post-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .post-date {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .post-body {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #343a40;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #495057;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+        }
+
+        .divider {
+            border-color: #dee2e6;
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">Daniel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-1">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="../fun.html">Fun</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Post content -->
+<main class="container my-5">
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-7 col-md-9">
+
+            <!-- Back link -->
+            <a href="index.html" class="back-link d-inline-flex align-items-center gap-1 mb-4">
+                ← Back to the blog
+            </a>
+
+            <!-- Post card -->
+            <div class="card post-card p-4 p-md-5 ">
+
+                <!-- Header -->
+                <header class="mb-4">
+                    <h1 class="post-title mb-2">I am very tired after the first week of classes</h1>
+                    <p class="post-date mb-0">
+                        🗓 <time datetime="2026-01-22">January 22, 2026</time>
+                    </p>
+                </header>
+
+                <hr class="divider">
+
+                <!-- Body -->
+                <section class="post-body mt-4">
+                    <p>
+                        This week has been exhausting! I have so many new classes and homework assignments to keep track
+                        of.
+                        I'm looking forward to the weekend so I can get some rest and recharge for next week. Hopefully,
+                        I
+                        can find a good balance between my studies and relaxation. It's also very unfortunate that I
+                        have all
+                        early classes this semester, but at least I get done earlier.
+                    </p>
+                </section>
+
+                <hr class="divider mt-4">
+
+            </div>
+
+
+        </div>
+        <!-- Aside -->
+        <aside class="col-lg-5 col-md-3 align-content-center">
+            <div class="card border-0 shadow-sm p-3">
+                <h5 class="fw-semibold">To Do This Weekend</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Sleep</li>
+                    <li class="list-group-item">Sleep</li>
+                    <li class="list-group-item">More sleep</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 </main>
 
-<footer>
-  <p>Made by Daniel Cater</p>
-</footer>
 </html>
