@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expenses</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <main class="container">
         <h1>Add Expenses</h1>
@@ -20,14 +22,13 @@
 
             <div class="mb-3">
                 <label for="date" class="form-label">Date:</label>
-                <input type="date" class="form-control" name="date" id="date" max="2026-03-11"
-                    title="Must be a valid date" required>
+                <input type="date" class="form-control" name="date" id="date" title="Must be a valid date" required>
             </div>
 
             <div class="mb-3">
                 <label for="amount" class="form-label">Amount:</label>
-                <input type="text" min="0.01" max="50000.00" class="form-control" pattern="^-?\d*\.\d{2}$" name="amount" id="amount"
-                    title="Must be a valid date" required>
+                <input type="number" min="0.01" max="50000.00" class="form-control" step="0.01" name="amount"
+                    id="amount" title="Must be a valid date" required>
             </div>
 
             <div class="mb-3">
@@ -40,7 +41,7 @@
                 <label for="restaurant" class="form-check-label">Restaurant</label>
                 <input type="checkbox" name="fun" id="fun" class="form-check-input">
                 <label for="fun" class="form-check-label">Fun</label>
-                
+
             </div>
 
             <div class=" mb-3">
@@ -63,19 +64,21 @@
 
     <script>
         let form = document.getElementById("expenseForm");
-        form.addEventListener("submit", function(event) {
+        form.addEventListener("submit", function (event) {
             let checkboxes = document.querySelectorAll("input[type=checkbox]");
             let checkedOne = Array.from(checkboxes).some(item => item.checked)
 
-            if(!checkedOne){
+            if (!checkedOne) {
                 event.preventDefault();
                 alert("At least one catagory must be checked.")
             }
         });
 
-        let date = new Date();
-        
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').max = today;
+
     </script>
 
 </body>
+
 </html>
