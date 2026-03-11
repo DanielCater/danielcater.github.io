@@ -11,25 +11,21 @@
 <body>
     <button id="start">Start Timer</button>
     <button id="stop">Stop Timer</button>
-    <p id="counter">0</p>
+    <p id="outputPlace">0</p>
 
     <script>
         let timerId;
-        let count = 0; 
+        let count = 0;
 
         document.getElementById("start").addEventListener("click", () => {
-            if (!timerId){
-                timerId = setInterval(() => {
-                    count++;
-                    document.getElementById("counter").textContent = count;
-                }, 1000);
-            }
+            timerId = setInterval(() => {
+                count++;
+                document.getElementById("outputPlace").textContent = count;
+            }, 1000);
         });
 
         document.getElementById("stop").addEventListener("click", () => {
-                clearInterval(timerId);
-                count = 0;
-                document.getElementById("counter").textContent = count;
+            clearInterval(timerId);
         });
     </script>
 </body>
