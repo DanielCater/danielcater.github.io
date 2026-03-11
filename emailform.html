@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siena Email</title>
+</head>
+<body>
+    <form id="sienaForm">
+        <label for="email">Siena College Email:</label>
+        <input type="text" name="email" id="email" pattern=".+@siena\.edu" title="Please enter a valid Siena College email ending with @siena.edu" placeholder="Enter your Siena email" required>
+
+        <label for="sienaID">Siena ID:</label>
+        <input type="text" name="sienaID" id="sienaID" pattern="98\d{6}" title="Siena ID must be 8 digits starting with 98" placeholder="Enter your Siena ID" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="sienaform.js" defer></script>
+</body>
+</html>
